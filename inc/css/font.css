@@ -1,0 +1,24 @@
+/* 나눔바른고딕 - 기본 */
+@font-face {
+  font-family: 'NanumBarunGothic';  
+  src: local('NanumBarunGothic'),
+  	   url('../../data/fonts/NanumBarunGothic.eot'),
+       url('../../data/fonts/NanumBarunGothic.woff2') format('woff2'),
+       url('../../data/fonts/NanumBarunGothic.woff') format('woff'),
+       url('../../data/fonts/NanumBarunGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 나눔바른고딕 - 기본(bold) */
+@font-face {
+  font-family: 'NanumBarunGothic';
+  src: local('NanumBarunGothic'),
+  	   url('../../data/fonts/NanumBarunGothicBold.eot'),
+       url('../../data/fonts/NanumBarunGothicBold.woff2') format('woff2'),
+       url('../../data/fonts/NanumBarunGothicBold.woff') format('woff'),
+       url('../../data/fonts/NanumBarunGothicBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {font-family: 'NanumBarunGothic'; font-size: 14px;}

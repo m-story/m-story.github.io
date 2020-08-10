@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="./inc/js/jquery.min.js"></script>
+<script src="./data/js/master_label.js"></script>
+<script src="./data/js/weapon_option.js"></script>
+<script src="./inc/js/index.js"></script>
+<link rel="stylesheet" href="./inc/css/font.css" />
+<link rel="stylesheet" href="./inc/css/index.css" />
+</head>
+<body>
+
+    <div id="main_banner">
+    </div>
+
+    <div id="header">
+        <div class="tab">
+            <ul>                
+                <li><span id="link_union" class="on">링크/유니온</span></li>
+                <li><span id="ability" >어빌리티</span></li>          
+                <li><span id="add_option">무기 추옵표</span></li>
+                <li><span id="calc">주흔작 계산</span></li>
+                <li><span id="master_label">마스터라벨</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="contents">
+        <div id="div-link_union">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="100px">직업군</th>
+                        <th width="70px">분류</th>
+                        <th width="140px">직업</th>
+                        <th>링크(1/2)<br/>* Level (70/120)</th>
+                        <th>유니온(B/A/S/SS/SSS)<br/>* Level (60/100/140/200/250)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="15">모험가</td>
+                        <td rowspan="3">전사</td>
+                        <td>히어로</td>
+                        <td rowspan="3">(중첩형)<br/>HP 15% 이하일 때, 3초동안 1초마다<br/>HP (20/23/26/29/32/35)% 회복</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>팔라딘</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>다크나이트</td>
+                        <td>최대 HP (2/3/4/5/6)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">궁수</td>
+                        <td>보우마스터</td>
+                        <td rowspan="3">(중첩형)<br/>몬스터 컬렉션 등록 확률(10/15/20/25/30/35)%,<br/>크리티컬 확률(3/4/6/7/9/10)% 증가</td>
+                        <td>DEX (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>패스파인더</td>
+                        <td>DEX (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>신궁</td>
+                        <td>크리티컬 확률 (1/2/3/4/5)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">마법사</td>
+                        <td>비숍</td>
+                        <td rowspan="3">(중첩형)<br/>최대 HP 가 높은 적의 약점을<br/>(15/17/19/21/23/25)% 로 파악,<br/>데미지 및 방어율 무시 (1/1/2/2/3/4)% 증가</td>
+                        <td>INT (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>아크메이지(썬,콜)</td>
+                        <td>INT (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>아크메이지(불,독)</td>
+                        <td>최대 MP (2/3/4/5/6)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">도적</td>
+                        <td>섀도어</td>
+                        <td rowspan="3">(중첩형)<br/>적에게 상태이상을 적용시키면 10초동안<br/>데미지(3/6/9/12/15/18)% 증가</td>
+                        <td>LUK (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>듀얼 블레이드</td>                        
+                        <td>LUK (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>나이트로드</td>
+                        <td>크리티컬 확률 (1/2/3/4/5)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">해적</td>
+                        <td>바이퍼</td>
+                        <td rowspan="3">(중첩형)<br/>올스탯(20/30/40/50/60/70),<br/>HP(350/525/700/875/1050/1225),<br/>MP(350/525/700/875/1050/1225),<br/>데미지 흡수(5/7/9/11/13/15)% 증가</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>캐논슈터</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>캡틴</td>
+                        <td>소환수 지속시간 (4/6/8/10/12)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">시그너스<br/>기사단</td>
+                        <td rowspan="2">전사</td>
+                        <td>미하일</td>
+                        <td>(90/110)초 동안 스탠스 확률 100% 증가</td>
+                        <td>최대 HP 증가 (250/500/1000/2000/2500)</td>
+                    </tr>
+                    <tr>
+                        <td>소울마스터</td>
+                        <td rowspan="5">(중첩형)<br/>공격력과 마력(7/9/11/13/15/17/19/21/23/25)<br/>상태이상 내성(1/3/4/6/7/9/10/12/13/15)<br/>모든 속성 내성(1/3/4/6/7/9/10/12/13/15)%<br/>증가</td>
+                        <td>최대 HP 증가 (250/500/1000/2000/2500)</td>
+                    </tr>
+                    <tr>
+                        <td>궁수</td>
+                        <td>윈드브레이커</td>
+                        <td>DEX (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>마법사</td>
+                        <td>플레임위자드</td>
+                        <td>INT (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>도적</td>
+                        <td>나이트워커</td>
+                        <td>LUK (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>해적</td>
+                        <td>스트라이커</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="7">레지스탕스</td>
+                        <td rowspan="3">전사</td>
+                        <td>데몬어벤져</td>
+                        <td>데미지 (5/10)% 증가</td>
+                        <td>보스 몬스터 공격 시 데미지 (1/2/3/5/6)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td>데몬슬레이어</td>
+                        <td>보스 몬스터 공격 시 (10/15)% 데미지 추가</td>
+                        <td>상태이상 저항 (1/2/3/4/5) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>블래스터</td>
+                        <td rowspan="4">(중첩형)<br/>부활 시 (1/2/3/4/5/6/7/8)초 동안<br/>피해를 받지 않는다.</td>
+                        <td>방어율 무시 (1/2/3/5/6)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td>궁수</td>
+                        <td>와일드헌터</td>
+                        <td>공격 시 20% 확률로 (4/8/12/16/20)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td>마법사</td>
+                        <td>배틀메이지</td>
+                        <td>INT (10/20/40/80/100) 증가</td>
+                    </tr>                    
+                    <tr>
+                        <td>해적</td>
+                        <td>메카닉</td>
+                        <td>버프 지속 시간 (5/10/15/20/25)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td>도적</td>
+                        <td>제논</td>
+                        <td>올스탯 (5/10)% 상승</td>
+                        <td>STR, DEX, LUK (5/10/20/40/50) 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">영웅</td>
+                        <td>전사</td>
+                        <td>아란</td>
+                        <td>콤보킬 구슬 경험치 획득량 (400/650)% 추가 획득</td>
+                        <td>타격 성공 시 70% 확률로<br/>최대 HP의 (2/4/6/8/10)% 회복</td>
+                    </tr>
+                    <tr>
+                        <td>궁수</td>
+                        <td>메르세데스</td>
+                        <td>경험치 획득량 (10/15)% 증가,<br/>사용 시 에우렐 귀환</td>
+                        <td>스킬 재사용 대기시간 (2/3/4/5/6)% 감소</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">마법사</td>
+                        <td>에반</td>
+                        <td>해방된 룬의 힘 지속시간 (30/50)% 증가</td>
+                        <td>타격 성공 시 70% 확률로<br/>최대 MP의 (2/4/6/8/10)% 회복</td>
+                    </tr>
+                    <tr>
+                        <td>루미너스</td>
+                        <td>몬스터의 방어 무시 (10/15)% 추가</td>
+                        <td>INT (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>도적</td>
+                        <td>팬텀</td>
+                        <td>크리티컬 확률 (10/15)% 증가</td>
+                        <td>메소 획득량 (1/2/3/4/5)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td>해적</td>
+                        <td>은월</td>
+                        <td>사망에 이르는 공격을 당할 시 (5/10)% 확률로 생존</td>
+                        <td>크리티컬 데미지 (1/2/3/4/5/6)% 증가</td>
+                    </tr>                    
+                    <tr>
+                        <td rowspan="3">노바</td>
+                        <td>전사</td>
+                        <td>카이저</td>
+                        <td>HP (10/15)% 증가</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>도적</td>
+                        <td>카데나</td>
+                        <td>자신보다 레벨이 낮은 몬스터 공격 시 데미지 (3/6)% 증가,<br/>상태이상에 걸린 몬스터 공격 시 데미지 (3/6)% 증가</td>
+                        <td>LUK (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>해적</td>
+                        <td>엔젤릭버스터</td>
+                        <td>10초 동안 데미지 (30/45)% 상승</td>
+                        <td>DEX (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">레프</td>
+                        <td>전사</td>
+                        <td>아델</td>
+                        <td>파티원 한명당 데미지 (1/2)% 증가,<br/>최대 (4/8)%까지 증가<br/>파티가 없는 경우 자신만 파티한 것으로 취급,<br>보스 몬스터 공격 시 데미지 (2/4)% 증가</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>마법사</td>
+                        <td>일리움</td>
+                        <td>일정거리 이상 이동 시 발동, 최대 6회 중첩 가능<br/>중첩당 데미지 (1/2)% 증가</td>
+                        <td>INT (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>해적</td>
+                        <td>아크</td>
+                        <td>전투 상태 5초 지속 시 발동, 최대 5회 중첩 가능<br/>발동 시 데미지 1% 증가, 중첩당 데미지(1/2)% 증가</td>
+                        <td>STR (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>초월자</td>
+                        <td>전사</td>
+                        <td>제로</td>
+                        <td>받는 데미지 (3/6/9/12/15)% 감소,<br/>공격 시 대상의 방어율 (2/4/6/8/10)% 무시</td>
+                        <td>경험치 획득량 (4/6/8/10/12)% 증가</td>
+                    </tr>
+                    <tr>
+                        <td>초능력자</td>
+                        <td>마법사</td>
+                        <td>키네시스</td>
+                        <td>크리티컬 데미지 (2/4)% 증가</td>
+                        <td>INT (10/20/40/80/100) 증가</td>
+                    </tr>                    
+                    <tr>
+                        <td>아니마</td>
+                        <td>도적</td>
+                        <td>호영</td>
+                        <td>방어율 무시 (5/10)% 증가,<br/>HP가 100%인 몬스터 공격 시 데미지 (7/14)% 증가</td>
+                        <td>LUK (10/20/40/80/100) 증가</td>
+                    </tr>
+                    <tr>
+                        <td>메이플스토리M</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>공격력/마력 (5/10/15/20/-) 증가</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="div-ability" class="dpn">
+            <table>
+                <thead>
+                    <tr>
+                        <th>어빌리티</th>
+                        <th>레어</th>
+                        <th>에픽</th>
+                        <th>유니크</th>
+                        <th>레전드리</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>공격속도 n단계 상승<span></span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>다수 공격 스킬의 공격 대상 n 증가<span></span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>패시브 스킬 레벨 n 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>n 레벨마다 공격력 1 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>16~10</td>
+                    </tr>
+                    <tr>
+                        <td>n 레벨마다 마력 1 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>16~10</td>
+                    </tr>
+                    <tr>
+                        <td>보스 몬스터 공격 시 데미지 n% 증가<span></span></td>
+                        <td></td>
+                        <td></td>
+                        <td>5~10%</td>
+                        <td>15~20%</td>
+                    </tr>
+                    <tr>
+                        <td>스킬 사용시 n% 확률로 재사용 대기시간 초기화<span></span></td>
+                        <td></td>
+                        <td></td>
+                        <td>5~10%</td>
+                        <td>15~20%</td>
+                    </tr>
+                    <tr>
+                        <td>최대 HP n% 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td>5~10%</td>
+                        <td>15~20%</td>
+                    </tr>
+                    <tr>
+                        <td>최대 MP n% 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td>5~10%</td>
+                        <td>15~20%</td>
+                    </tr>
+                    <tr>
+                        <td>회피율 n% 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td>3~5%</td>
+                        <td>8~10%</td>
+                    </tr>
+                    <tr>
+                        <td>방어력 n% 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td>5~10%</td>
+                        <td>15~20%</td>
+                    </tr>
+                    <tr>
+                        <td>방어력의 n%만큼 데미지 고정값 증가</td>
+                        <td></td>
+                        <td></td>
+                        <td>13~25%</td>
+                        <td>38~50%</td>
+                    </tr>
+                    <tr>
+                        <td>크리티컬 확률 n% 증가<span></span></td>
+                        <td></td>
+                        <td>5~10%</td>
+                        <td>15~20%</td>
+                        <td>25~30%</td>
+                    </tr>
+                    <tr>
+                        <td>공격력 n 증가</td>
+                        <td></td>
+                        <td>6~12</td>
+                        <td>15~21</td>
+                        <td>27~30</td>
+                    </tr>
+                    <tr>
+                        <td>마력 n 증가</td>
+                        <td></td>
+                        <td>6~12</td>
+                        <td>15~21</td>
+                        <td>27~30</td>
+                    </tr>
+                    <tr>
+                        <td>버프 지속시간 n% 증가<span></span></td>
+                        <td>7~13%</td>
+                        <td>19~25%</td>
+                        <td>32~38%</td>
+                        <td>44~50%</td>
+                    </tr>
+                    <tr>
+                        <td>상태 이상에 걸림 대상 공격 시 데미지 n% 증가<span></span></td>
+                        <td>2~3%</td>
+                        <td>4~5%</td>
+                        <td>7~8%</td>
+                        <td>9~10%</td>
+                    </tr>
+                    <tr>
+                        <td>일반 몬스터 공격 시 데미지 n% 증가</td>
+                        <td>2~3%</td>
+                        <td>4~5%</td>
+                        <td>7~8%</td>
+                        <td>9~10%</td>
+                    </tr>
+                    <tr>
+                        <td>아이템 획득 확률 n% 증가<span></span></td>
+                        <td>3~5%</td>
+                        <td>8~10%</td>
+                        <td>13~15%</td>
+                        <td>18~20%</td>
+                    </tr>
+                    <tr>
+                        <td>메소 획득량 n% 증가<span></span></td>
+                        <td>3~5%</td>
+                        <td>8~10%</td>
+                        <td>13~15%</td>
+                        <td>18~20%</td>
+                    </tr>
+                    <tr>
+                        <td>모든 능력치 n 증가</td>
+                        <td>5~10</td>
+                        <td>15~20</td>
+                        <td>25~30</td>
+                        <td>35~40</td>
+                    </tr>
+                    <tr>
+                        <td>STR n 증가</td>
+                        <td>5~10</td>
+                        <td>15~20</td>
+                        <td>25~30</td>
+                        <td>35~40</td>
+                    </tr>
+                    <tr>
+                        <td>DEX n 증가</td>
+                        <td>5~10</td>
+                        <td>15~20</td>
+                        <td>25~30</td>
+                        <td>35~40</td>
+                    </tr>
+                    <tr>
+                        <td>INT n 증가</td>
+                        <td>5~10</td>
+                        <td>15~20</td>
+                        <td>25~30</td>
+                        <td>35~40</td>
+                    </tr>
+                    <tr>
+                        <td>LUK n 증가</td>
+                        <td>5~10</td>
+                        <td>15~20</td>
+                        <td>25~30</td>
+                        <td>35~40</td>
+                    </tr>
+                    <tr>
+                        <td>STR n 증가, DEX m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>STR n 증가, INT m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>STR n 증가, LUK m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>DEX n 증가, STR m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>DEX n 증가, INT m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>DEX n 증가, LUK m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>INT n 증가, STR m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>INT n 증가, DEX m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>INT n 증가, LUK m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>LUK n 증가, STR m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>INT n 증가, DEX m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>INT n 증가, INT m 증가</td>
+                        <td>5~10, 3~5</td>
+                        <td>15~20, 8~10</td>
+                        <td>25~30, 13~15</td>
+                        <td>35~40, 18~20</td>
+                    </tr>
+                    <tr>
+                        <td>AP를 직접 투자한 STR의 n% 만큼 DEX 증가</td>
+                        <td>2~3%</td>
+                        <td>4~5%</td>
+                        <td>7~8%</td>
+                        <td>9~10%</td>
+                    </tr>
+                    <tr>
+                        <td>AP를 직접 투자한 DEX의 n% 만큼 STR 증가</td>
+                        <td>2~3%</td>
+                        <td>4~5%</td>
+                        <td>7~8%</td>
+                        <td>9~10%</td>
+                    </tr>
+                    <tr>
+                        <td>AP를 직접 투자한 INT의 n% 만큼 LUK 증가</td>
+                        <td>2~3%</td>
+                        <td>4~5%</td>
+                        <td>7~8%</td>
+                        <td>9~10%</td>
+                    </tr>
+                    <tr>
+                        <td>AP를 직접 투자한 LUK의 n% 만큼 INT 증가</td>
+                        <td>2~3%</td>
+                        <td>4~5%</td>
+                        <td>7~8%</td>
+                        <td>9~10%</td>
+                    </tr>
+                    <tr>
+                        <td>방어력 n 증가</td>
+                        <td>50~100</td>
+                        <td>150~200</td>
+                        <td>250~300</td>
+                        <td>350~400</td>
+                    </tr>
+                    <tr>
+                        <td>최대 HP n 증가</td>
+                        <td>75~150</td>
+                        <td>225~300</td>
+                        <td>375~450</td>
+                        <td>525~600</td>
+                    </tr>
+                    <tr>
+                        <td>최대 MP n 증가</td>
+                        <td>75~150</td>
+                        <td>225~300</td>
+                        <td>375~450</td>
+                        <td>525~600</td>
+                    </tr>
+                    <tr>
+                        <td>점프력 n 증가</td>                        
+                        <td>4~8</td>
+                        <td>10~14</td>
+                        <td>18~20</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>이동속도 n 증가</td>
+                        <td>4~8</td>
+                        <td>10~14</td>
+                        <td>18~20</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="div-add_option" class="dpn">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="80px">렙제</th>
+                        <th width="150px">분류</th>
+                        <th width="250px">무기명</th>
+                        <th width="">공.마</th>
+                        <th width="">1추</th>
+                        <th width="">2추</th>
+                        <th width="">3추</th>
+                        <th width="">4추</th>
+                        <th width="">5추</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="div-calc" class="dpn">
+            <div class="title">* 무기 및 방어구(장갑 제외)</div>
+            <div id="calc1">
+                <div id="calc1-1">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>장비 종류</th>
+                                <td>
+                                    <select id="calc1_select1">
+                                        <option value="1">무기</option>
+                                        <option value="2">방어구</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>증가한 주스탯</th>
+                                <td><input id="calc1_input1" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>증가한 부스탯</th>
+                                <td><input id="calc1_input2" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>강화 성공 횟수</th>
+                                <td><input id="calc1_input3" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>계산</th>
+                                <td><button id="calc1_btn" class="equal">Click!</button></td>
+                            </tr>
+                            <tr>
+                                <th>결과</th>
+                                <td><span id="calc1_result"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="calc1-2">
+                    <div>* 예제 이미지</div>
+                    <img src="data/img/ex_calc1.png" />
+                </div>
+            </div>
+            <br/>
+            <div class="title">* 장갑</div>
+            <div id="calc2">
+                <div id="calc2-1">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Lv.</th>
+                                <td>
+                                    <select id="calc2_select1">
+                                        <option value="160">앱솔랩스(160제)</option>
+                                        <!--<option value="200">아케인셰이드(200제)</option>-->
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>증가한 공격력/마력</th>
+                                <td><input id="calc2_input1" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>스타포스 n성</th>
+                                <td>
+                                    <select id="calc2_select2">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강화 성공 횟수</th>
+                                <td><input id="calc2_input2" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>계산</th>
+                                <td><button id="calc2_btn" class="equal">Click!</button></td>
+                            </tr>
+                            <tr>
+                                <th>결과</th>
+                                <td><span id="calc2_result"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="calc2-2">
+                    <div>* 예제 이미지</div>
+                    <img src="data/img/ex_calc2.png" />
+                </div>
+            </div>
+            <br/>
+        </div>
+        
+        <div id="div-master_label" class="dpn">
+            <div id="master1" class="master_card"></div>
+            <div id="master2" class="master_card"></div>
+            <div id="master3" class="master_card"></div>
+            <div id="master4" class="master_card"></div>
+            <div id="master5" class="master_card"></div>
+            <div id="master6" class="master_card"></div>
+            <div id="master7" class="master_card"></div>
+            <div id="master8" class="master_card"></div>
+            <div id="master9" class="master_card"></div>
+            <div id="master10" class="master_card"></div>
+            <div id="master11" class="master_card"></div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div>* 문의사항은 메이플스토리 루나서버 난초 길드 '만덕뀨' 에게</div>            
+    </div>
+</body>
+</html>
