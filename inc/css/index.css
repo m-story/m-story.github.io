@@ -152,6 +152,9 @@ body { width: 1100px; margin: auto; }
 #div-world_quest .title2 span:nth-child(5) { background-color: #a1cc4a; color: white; }
 #div-world_quest > div { margin-bottom: 15px; }
 #div-world_quest table { width: 1100px; margin: auto; border-collapse: collapse; }
+#div-world_quest table thead tr th { height: 30px; border: 1px solid #dedede; }
+#div-world_quest table thead tr th:first-child { color: red;}
+#div-world_quest table thead tr th:last-child { color: blue;}
 #div-world_quest table tbody tr td { padding: 5px 0; border: 1px solid #dedede; height: 100px; position: relative; font-weight: bold;}
 #div-world_quest table tbody tr td:first-child { color: red;}
 #div-world_quest table tbody tr td:last-child { color: blue;}
