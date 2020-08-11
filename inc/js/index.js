@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
-    $('#header > .tab > ul > li > span').on('click', function(){
+    $('#header > .tab > ul > li').on('click', function(){
         var tab_id = $(this).attr('id');
 
         $('#contents > div').addClass('dpn');
-        $('#header > .tab > ul > li > span').removeClass('on');
+        $('#header > .tab > ul > li').removeClass('on');
         
         $('#contents > div#div-'+tab_id).removeClass('dpn');
         $(this).addClass('on');
@@ -71,7 +71,6 @@ $(document).ready(function(){
         $('#calc1_result').text(result);
     });
 
-
     // 장갑
     $('#calc2_btn').on('click', function(){
         
@@ -131,12 +130,6 @@ $(document).ready(function(){
 
         $('#calc2_result').text(result);
     });
-
-
-
-
-
-
 
 
 
@@ -245,5 +238,6 @@ $(document).ready(function(){
         }
 
     })();
+
 
 });

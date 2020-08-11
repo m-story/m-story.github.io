@@ -1,5 +1,5 @@
 body { width: 1100px; margin: auto; }
-#header { border: 1px solid #333333; font-size: 15px; margin: 20px 0;}
+#header { font-size: 15px; margin-top: 20px;}
 #footer { border-top: 1px solid #dfdfdf; margin-top: 50px; height: 100px; text-align: center;}
 #footer div { margin-top: 20px; }
 #contents { min-height: 1000px;}
@@ -15,10 +15,12 @@ body { width: 1100px; margin: auto; }
 
 /* tab */
 .tab { width: 100%; }
-.tab > ul { display: table; }
-.tab > ul > li { list-style: none; display: table-cell; padding-right: 20px; }
-.tab > ul > li > span:hover { cursor: pointer; color: #a131e4; font-weight: bold; }
-.tab > ul > li > span.on { color: #a131e4; font-weight: bold; }
+.tab > ul { display: table; width: 100%; margin: auto; padding: 0; text-align: center; }
+.tab > ul > li { list-style: none; display: table-cell; border: 1px solid #dfdfdf; border-bottom: 2px solid #333333; border-right: 0; padding: 12px 0; font-size: 15px; }
+.tab > ul > li:last-child { border-right: 1px solid #dfdfdf; }
+.tab > ul > li.on { color: #a131e4; font-weight: bold; border: 2px solid #333333; border-bottom: 0;}
+.tab > ul > li:hover { cursor: pointer; color: #a131e4; font-weight: bold;  }
+
 
 /* ability */
 #div-ability { padding-top: 20px; }
@@ -137,3 +139,70 @@ body { width: 1100px; margin: auto; }
 
 #div-calc #calc1_result { font-weight: bold; color: red;}
 #div-calc #calc2_result { font-weight: bold; color: red;}
+
+/* world_quest */
+#div-world_quest { padding-top: 20px; }
+#div-world_quest .title { font-size: 17px; font-weight: bold; }
+#div-world_quest .title2 { font-weight: bold; }
+#div-world_quest .title2 span { padding: 3px 10px; }
+#div-world_quest .title2 span:nth-child(1) { background-color: #214d21; color: white; }
+#div-world_quest .title2 span:nth-child(2) { background-color: #4b9396; color: white; }
+#div-world_quest .title2 span:nth-child(3) { background-color: #fdb4c0; color: white; }
+#div-world_quest .title2 span:nth-child(4) { background-color: #cf8700; color: white; }
+#div-world_quest .title2 span:nth-child(5) { background-color: #a1cc4a; color: white; }
+#div-world_quest > div { margin-bottom: 15px; }
+#div-world_quest table { width: 1100px; margin: auto; border-collapse: collapse; }
+#div-world_quest table tbody tr td { padding: 5px 0; border: 1px solid #dedede; height: 100px; position: relative; font-weight: bold;}
+#div-world_quest table tbody tr td:first-child { color: red;}
+#div-world_quest table tbody tr td:last-child { color: blue;}
+#div-world_quest table tbody tr td span { position: absolute; top: 10px; left: 10px;}
+#div-world_quest table tbody tr td div { width: 100%; height: 20px; color: white; }
+
+/* 1주 */
+#div-world_quest table tbody tr.ju1 td:nth-child(1) div { background-color: #fdb4c0; }
+#div-world_quest table tbody tr.ju1 td:nth-child(2) div { background-color: #fdb4c0; }
+#div-world_quest table tbody tr.ju1 td:nth-child(3) div { background-color: #fdb4c0; }
+#div-world_quest table tbody tr.ju1 td:nth-child(4) div { background-color: #fdb4c0; }
+#div-world_quest table tbody tr.ju1 td:nth-child(5) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju1 td:nth-child(6) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju1 td:nth-child(7) div { background-color: #cf8700; }
+/* 2주 */
+#div-world_quest table tbody tr.ju2 td:nth-child(1) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju2 td:nth-child(2) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju2 td:nth-child(3) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju2 td:nth-child(4) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju2 td:nth-child(5) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju2 td:nth-child(6) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju2 td:nth-child(7) div { background-color: #cf8700; }
+/* 3주 */
+#div-world_quest table tbody tr.ju3 td:nth-child(1) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju3 td:nth-child(2) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju3 td:nth-child(3) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju3 td:nth-child(4) div { background-color: #cf8700; }
+#div-world_quest table tbody tr.ju3 td:nth-child(5) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju3 td:nth-child(6) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju3 td:nth-child(7) div { background-color: #a1cc4a; }
+/* 4주 */
+#div-world_quest table tbody tr.ju4 td:nth-child(1) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju4 td:nth-child(2) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju4 td:nth-child(3) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju4 td:nth-child(4) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju4 td:nth-child(5) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju4 td:nth-child(6) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju4 td:nth-child(7) div { background-color: #a1cc4a; }
+/* 5주 */
+#div-world_quest table tbody tr.ju5 td:nth-child(1) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju5 td:nth-child(2) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju5 td:nth-child(3) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju5 td:nth-child(4) div { background-color: #a1cc4a; }
+#div-world_quest table tbody tr.ju5 td:nth-child(5) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju5 td:nth-child(6) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju5 td:nth-child(7) div { background-color: #214d21; }
+/* 6주 */
+#div-world_quest table tbody tr.ju6 td:nth-child(1) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju6 td:nth-child(2) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju6 td:nth-child(3) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju6 td:nth-child(4) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju6 td:nth-child(5) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju6 td:nth-child(6) div { background-color: #214d21; }
+#div-world_quest table tbody tr.ju6 td:nth-child(7) div { background-color: #214d21; }
