@@ -23,7 +23,7 @@ var master_label = [
         seq: '2',
         flag: '2기',
         period: '2014.01.28 ~ 2014.07.10',
-        name: '마스터  세트',
+        name: '마스터 포니 세트',
         hair_cnt: '1',
         man_hair: '빅토리 라이더 헤어(남)',
         woman_hair: '스타 라이더 헤어(여)',        
