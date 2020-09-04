@@ -131,6 +131,8 @@ $(document).ready(function(){
         $('#calc2_result').text(result);
     });
 
+    
+
 
 
     // 마라벨 화면 구현
@@ -162,7 +164,7 @@ $(document).ready(function(){
             html2 += ml.flag + '&nbsp;';
             html2 += ml.name + '</span></td></tr>';
             
-            html2 += '<tr><td>출시 시간</td><td>' + ml.period + '</td></tr>';
+            html2 += '<tr><td>출시 기간</td><td>' + ml.period + '</td></tr>';
             html2 += '<tr><td>헤어(남)</td><td>' + ml.man_hair + '</td></tr>';
             html2 += '<tr><td>헤어(여)</td><td>' + ml.woman_hair + '</td></tr>';
             if(ml.reword_hair){
@@ -239,5 +241,91 @@ $(document).ready(function(){
 
     })();
 
+
+    // 소울 초기화
+    (function(){
+        
+        var $tr;
+        for(var i=0;i<soul.length;i++){
+            var sl = soul_obj[soul[i]];
+            $tr = $('#div-soul > #soul-tab > table > tbody > tr#soul-tier-'+sl.tier+' > td');            
+            $tr.append('<span id="span-'+sl.en_name+'" class="span-soul" data-nm="'+sl.en_name+'">'+sl.ko_name+'</span>');
+        }
+
+        // 소울이름 클릭
+        $('.span-soul').on('click', function(){
+
+            $(this).parent().find('span').removeClass('on');
+            $(this).addClass('on');
+
+            var $div = $('#soul-detail > #soul-sel');
+            $div.empty();
+            
+            var html = '';
+                
+            $('#soul-detail > #soul-none').addClass('dpn');
+            $('#soul-detail > #soul-sel').removeClass('dpn');
+
+            var soul = soul_obj[$(this).attr('data-nm')];
+
+            html += '<div id="tier_detail">';
+            html += '<table>';
+            html += '<tr>';
+            html += '<th>기운찬</th>';
+            html += '<th>날렵한</th>';
+            html += '<th>총명한</th>';
+            html += '<th>놀라운</th>';
+            html += '<th>화려한</th>';
+            html += '<th>강력한</th>';
+            html += '<th>빛나는</th>';
+            html += '<th>강인한</th>';
+            html += '</tr>';
+            html += '<tr>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt1+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt2+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt3+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt4+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt5+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt6+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt7+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier].opt8+'</td>';
+            html += '</tr>';
+            html += '<tr>';
+            html += '<th colspan="8">위대한 (랜덤 1)</th>';            
+            html += '</tr>';
+            html += '<tr>';
+            html += '<td>'+soul_option['tier_'+soul.tier+'w'].opt1+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier+'w'].opt2+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier+'w'].opt3+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier+'w'].opt4+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier+'w'].opt5+'</td>';
+            html += '<td>'+soul_option['tier_'+soul.tier+'w'].opt6+'</td>';
+            html += '<td colspan="2">'+soul_option['tier_'+soul.tier+'w'].opt7+'</td>';
+            html += '</tr>';
+            html += '</table>';
+            html += '</div>';
+            
+
+
+            if(soul.img1){
+                html += '<div class="effect-title">일반 소울</div>';
+                for(var i=0;i<soul.img1.length;i++){
+                    //console.log(soul.img[i]);
+                    html += '<img id="'+soul.img1[i].split('.')[0]+'" src="./data/img/soul/'+soul.img1[i]+'">'
+                }
+            }
+            if(soul.img2){                
+                html += '<div class="effect-title" style="margin-top: 100px;">위대한 소울</div>';
+                for(var i=0;i<soul.img2.length;i++){
+                    //console.log(soul.img[i]);
+                    html += '<img id="'+soul.img2[i].split('.')[0]+'" src="./data/img/soul/'+soul.img2[i]+'">'
+                }
+            }
+
+            
+            $div.append(html);
+        });
+
+    })();
 
 });
