@@ -372,6 +372,21 @@ $(document).ready(function(){
                     html += '<tr>'
                     html += '<td class="soul_img_td"><div id="'+soul.img1[2].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[2]+')"></div></td>';
                     html += '</tr>'
+                } if(soul.skill1_type == '3'){
+                    html += '<tr>'
+                    html += '<th>설치된 소울 대기 이펙트</th>';
+                    html += '</tr>'
+                    html += '<tr>'
+                    //html += '<td><img id="'+soul.img1[1].split('.')[0]+'" src="./data/img/soul/'+soul.img1[1]+'"></td>';
+                    html += '<td class="soul_img_td"><div id="'+soul.img1[1].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[1]+')"></div></td>';
+                    html += '</tr>'
+
+                    html += '<tr>'
+                    html += '<th>설치된 소울 공격 이펙트</th>';
+                    html += '</tr>'
+                    html += '<tr>'
+                    html += '<td class="soul_img_td"><div id="'+soul.img1[2].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[2]+')"></div></td>';
+                    html += '</tr>'
                 } else {
                     html += '<tr>'
                     html += '<th>소울 스킬 이펙트</th>';
