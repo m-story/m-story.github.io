@@ -372,7 +372,7 @@ $(document).ready(function(){
                     html += '<tr>'
                     html += '<td class="soul_img_td"><div id="'+soul.img1[2].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[2]+')"></div></td>';
                     html += '</tr>'
-                } if(soul.skill1_type == '3'){
+                } else if(soul.skill1_type == '3'){
                     html += '<tr>'
                     html += '<th>설치된 소울 대기 이펙트</th>';
                     html += '</tr>'
