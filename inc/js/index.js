@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
+    var qsi;
+
     $('#header > .tab > ul > li').on('click', function(){
+
+        clearInterval(qsi);
+
         var tab_id = $(this).attr('id');
 
         $('#contents > div').addClass('dpn');
@@ -255,6 +260,8 @@ $(document).ready(function(){
         // 소울이름 클릭
         $('.span-soul').on('click', function(){
 
+            clearInterval(qsi);
+
             $(this).parent().find('span').removeClass('on');
             $(this).addClass('on');
 
@@ -308,19 +315,201 @@ $(document).ready(function(){
 
 
             if(soul.img1){
-                html += '<div class="effect-title">일반 소울</div>';
-                for(var i=0;i<soul.img1.length;i++){
-                    //console.log(soul.img[i]);
-                    html += '<img id="'+soul.img1[i].split('.')[0]+'" src="./data/img/soul/'+soul.img1[i]+'">'
+
+                html += '<div id="soul_skill-div">'
+
+
+                // 좌측 일반 테이블
+                html += '<div id="soul_skill-detail1">'
+                html += '<table id="soul">'
+                
+                html += '<tr>'
+                html += '<th>일반 소울</th>';
+                html += '</tr>'
+                html += '<tr>'
+                //html += '<td><img style="height: 200px !important;" id="'+soul.img1[0].split('.')[0]+'" src="./data/img/soul/'+soul.img1[0]+'"></td>';
+                html += '<td class="soul_topimg_td"><div id="'+soul.img1[0].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[0]+')"></div></td>';
+                html += '</tr>'
+
+                html += '<tr>'
+                html += '<th>소울 스킬</th>';
+                html += '</tr>'
+                html += '<tr>'
+                html += '<td class="pd-tb10">'
+                html += '<span style="font-weight: bold; color: red; margin-right: 5px; ">'
+                if(soul.skill1_type == '1'){
+                    html += '소환형'
+                } else {
+                    if(soul.skill1_type == '2'){ html += '스킬형' }
+                    if(soul.skill1_type == '3'){ html += '설치형' }
+                    if(soul.skill1_type == '4'){ html += '버프형' }
                 }
-            }
-            if(soul.img2){                
-                html += '<div class="effect-title" style="margin-top: 100px;">위대한 소울</div>';
-                for(var i=0;i<soul.img2.length;i++){
-                    //console.log(soul.img[i]);
-                    html += '<img id="'+soul.img2[i].split('.')[0]+'" src="./data/img/soul/'+soul.img2[i]+'">'
+                
+                html += '</span>'                
+                html += soul.skill1_detail
+                if(soul.en_name == 'queen'){
+                    html += '<br/><div>'
+                    for(var i=0; i<soul.skill1_detail2.length; i++){
+                        html += soul.skill1_detail2[i] + '<br/>'
+                    }
+                    html += '</div>'
                 }
+                html += '</td>'
+                html += '</tr>'
+
+                if(soul.skill1_type == '1'){
+                    html += '<tr>'
+                    html += '<th>소환된 소울 대기 이펙트</th>';
+                    html += '</tr>'
+                    html += '<tr>'
+                    //html += '<td><img id="'+soul.img1[1].split('.')[0]+'" src="./data/img/soul/'+soul.img1[1]+'"></td>';
+                    html += '<td class="soul_img_td"><div id="'+soul.img1[1].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[1]+')"></div></td>';
+                    html += '</tr>'
+
+                    html += '<tr>'
+                    html += '<th>소환된 소울 공격 이펙트</th>';
+                    html += '</tr>'
+                    html += '<tr>'
+                    html += '<td class="soul_img_td"><div id="'+soul.img1[2].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[2]+')"></div></td>';
+                    html += '</tr>'
+                } else {
+                    html += '<tr>'
+                    html += '<th>소울 스킬 이펙트</th>';
+                    html += '</tr>'
+                    html += '<tr>'
+                    html += '<td class="soul_img_td"><div id="'+soul.img1[1].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img1[1]+')"></div></td>';
+                    html += '</tr>'
+                }
+                
+                html += '</table>'
+                html += '</div>'
+
+
+
+                
+
+                // 우측 위대한 테이블
+                html += '<div id="soul_skill-detail2">'
+                html += '<table id="soul">'
+                
+                html += '<tr>'
+                html += '<th>위대한 소울</th>';
+                html += '</tr>'
+                html += '<tr>'
+                //html += '<td><img style="height: 200px !important;" id="'+soul.img2[0].split('.')[0]+'" src="./data/img/soul/'+soul.img2[0]+'"></td>';
+                html += '<td class="soul_topimg_td"><div id="'+soul.img2[0].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[0]+')"></div></td>';
+                html += '</tr>'
+
+                html += '<tr>'
+                html += '<th>소울 스킬</th>';
+                html += '</tr>'
+                html += '<tr>'
+                html += '<td class="pd-tb10">'
+                html += '<span style="font-weight: bold; color: red; margin-right: 5px; ">'
+                if(soul.skill2_type == '1'){
+                    html += '소환형'
+                } else {
+                    if(soul.skill2_type == '2'){ html += '스킬형' }
+                    if(soul.skill1_type == '3'){ html += '설치형' }
+                    if(soul.skill1_type == '4'){ html += '버프형' }
+                }
+                html += '</span>'                
+                html += soul.skill2_detail + '</td>'
+                html += '</tr>'
+
+                if(soul.skill2_type == '1'){
+                    if(soul.en_name != 'queen'){
+                        html += '<tr>'
+                        html += '<th>소환된 소울 대기 이펙트</th>';
+                        html += '</tr>'
+
+                        html += '<tr>'
+                        html += '<td class="soul_img_td"><div id="'+soul.img2[1].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[1]+')"></div></td>';
+                        html += '</tr>'
+
+                        html += '<tr>'
+                        html += '<th>소환된 소울 공격 이펙트</th>';
+                        html += '</tr>'
+                        html += '<tr>'
+                        html += '<td class="soul_img_td"><div id="'+soul.img2[2].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[2]+')"></div></td>';
+                        html += '</tr>'                    
+                    } else {
+                        html += '<tr>'
+                        html += '<th>소환된 소울 대기 이펙트(랜덤 1) - <span class="skillname_queen" style="color: red;">유혹</span></th>';
+                        html += '</tr>'
+
+                        html += '<tr>'
+                        html += '<td class="soul_img_td">'
+                        html += '<div id="'+soul.img2[1].split('.')[0]+'" class="queen1 on" data-seq="1" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[1]+')"></div>'
+                        html += '<div id="'+soul.img2[3].split('.')[0]+'" class="queen1 dpn" data-seq="2" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[3]+')"></div>'
+                        html += '<div id="'+soul.img2[5].split('.')[0]+'" class="queen1 dpn" data-seq="3" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[5]+')"></div>'
+                        html += '<div id="'+soul.img2[7].split('.')[0]+'" class="queen1 dpn" data-seq="4" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[7]+')"></div>'
+                        html += '</td>';
+                        html += '</tr>'
+
+                        html += '<tr>'
+                        html += '<th>소환된 소울 공격 이펙트(랜덤 1) - <span class="skillname_queen" style="color: red;">유혹</span></th>';
+                        html += '</tr>'
+
+                        html += '<tr>'
+                        html += '<td class="soul_img_td">'
+                        html += '<div id="'+soul.img2[2].split('.')[0]+'" class="queen2 on" data-seq="1" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[2]+')"></div>'
+                        html += '<div id="'+soul.img2[4].split('.')[0]+'" class="queen2 dpn" data-seq="2" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[4]+')"></div>'
+                        html += '<div id="'+soul.img2[6].split('.')[0]+'" class="queen2 dpn" data-seq="3" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[6]+')"></div>'
+                        html += '<div id="'+soul.img2[8].split('.')[0]+'" class="queen2 dpn" data-seq="4" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[8]+')"></div>'
+                        html += '</td>';
+                        html += '</tr>'
+                        
+                        qsi = setInterval(function(){
+                            var $div = $('.soul_img_td div.queen1.on');
+                            console.log($div)
+                            var seq = Number($div.attr('data-seq'));
+                            seq++;
+                            if(seq=='5'){ seq=1; }
+
+                            console.log(seq)
+
+                            $('.skillname_queen').text(soul.skill2_detail2[seq-1]);
+
+                            $('.soul_img_td div.queen1, .soul_img_td div.queen2').removeClass('on');
+                            $('.soul_img_td div.queen1, .soul_img_td div.queen2').addClass('dpn');
+
+                            $('.soul_img_td div.queen1[data-seq='+seq+']').removeClass('dpn');
+                            $('.soul_img_td div.queen1[data-seq='+seq+']').addClass('on');
+
+                            $('.soul_img_td div.queen2[data-seq='+seq+']').removeClass('dpn');
+                            $('.soul_img_td div.queen2[data-seq='+seq+']').addClass('on');
+                        }, 3000);
+                        
+                    }
+
+                } else {
+                    html += '<tr>'
+                    html += '<th>소울 스킬 이펙트</th>';
+                    html += '</tr>'
+                    html += '<tr>'
+                    html += '<td class="soul_img_td"><div id="'+soul.img2[1].split('.')[0]+'" style="background-image: url(.\/data\/img\/soul\/'+soul.img2[1]+')"></div></td>';
+                    html += '</tr>'
+                }
+
+                
+
+                
+                html += '</table>'
+                html += '</div>'
+
+                html += '</div>'
+
+
+
             }
+            // if(soul.img2){                
+            //     html += '<div class="effect-title" style="margin-top: 100px;">위대한 소울</div>';
+            //     for(var i=0;i<soul.img2.length;i++){
+            //         //console.log(soul.img[i]);
+            //         html += '<img id="'+soul.img2[i].split('.')[0]+'" src="./data/img/soul/'+soul.img2[i]+'">'
+            //     }
+            // }
 
             
             $div.append(html);
