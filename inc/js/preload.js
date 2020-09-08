@@ -15,7 +15,7 @@ $(document).ready(function(){
             
             for(var q=0; q<img2.length; q++){
                 preloadImage  = new Image();
-                preloadImage.src="data/img/soul/"+img2[p];
+                preloadImage.src="data/img/soul/"+img2[q];
             }
     
         }
