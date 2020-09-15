@@ -103,6 +103,27 @@ body { width: 1100px; margin: auto; }
 #div-master_label .master_card table#master_info td { font-size: 12.5px; padding-bottom: 5px;}
 #div-master_label .master_card table#master_info td span.master_title { font-size: 20px; font-weight: bold; }
 
+/* master label */
+#div-master_label_pet { padding-top: 20px; }
+#div-master_label_pet .master_pet_card { width: 1000px; display: table; border: 1px solid #d4d4d4; margin-right: 20px; margin-left: 20px; margin-bottom: 30px; box-shadow: 3px 3px 0 rgb(0,0,0,0.04); border-radius: 30px 30px; padding: 20px;}
+#div-master_label_pet .master_pet_card .master_pet_img { width: 45%; display: table-cell; vertical-align: middle; }
+#div-master_label_pet .master_pet_card .master_pet_img span { background-repeat: no-repeat; display: inline-block; width: 100px; height: 100px;}
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet1-1 { background-image: url(../../data/img/master_label_pet/p1-1.gif); background-position: center center; }
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet1-2 { background-image: url(../../data/img/master_label_pet/p1-2.gif); background-position: center center; }
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet1-3 { background-image: url(../../data/img/master_label_pet/p1-3.gif); background-position: center center; }
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet2-1 { background-image: url(../../data/img/master_label_pet/p2-1.gif); background-position: center center; }
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet2-2 { background-image: url(../../data/img/master_label_pet/p2-2.gif); background-position: center center; }
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet2-3 { background-image: url(../../data/img/master_label_pet/p2-3.gif); background-position: center center; }
+
+
+#div-master_label_pet .master_pet_card .master_pet_info { width: 55%; display: table-cell; }
+#div-master_label_pet .master_pet_card table#master_pet_info { width: 300px; }
+#div-master_label_pet .master_pet_card table#master_pet_info tr td:first-child{ width: 90px; font-weight: bold; }
+#div-master_label_pet .master_pet_card table#master_pet_info tr:first-child td{ padding-bottom: 15px; }
+#div-master_label_pet .master_pet_card table#master_pet_info td { font-size: 12.5px; padding-bottom: 5px;}
+#div-master_label_pet .master_pet_card table#master_pet_info td span.master_pet_title { font-size: 20px; font-weight: bold; }
+
+
 /* add_option */
 #div-add_option { padding-top: 20px; }
 #div-add_option table { width: 1100px; border: 1px solid #dfdfdf; margin: auto; }
@@ -213,62 +234,17 @@ body { width: 1100px; margin: auto; }
 #div-world_quest table tbody tr.ju6 td:nth-child(6) div { background-color: #214d21; }
 #div-world_quest table tbody tr.ju6 td:nth-child(7) div { background-color: #214d21; }
 
+/* cube */
+#div-cube { padding-top: 20px; }
+#div-cube .title { font-size: 17px; font-weight: bold; margin-bottom: 5px;}
 
-/* master label */
-#div-soul { padding-top: 20px; }
-#div-soul .soul_card { width: 1000px; display: table; border: 1px solid #d4d4d4; margin-right: 20px; margin-left: 20px; margin-bottom: 30px; box-shadow: 3px 3px 0 rgb(0,0,0,0.04); border-radius: 30px 30px; padding: 20px;}
-#div-soul .soul_card .soul_img { width: 45%; display: table-cell; vertical-align: middle; }
-#div-soul .soul_card .soul_img span { background-repeat: no-repeat; display: inline-block; width: 100px; height: 100px;}
-#div-soul .soul_card .soul_img span.soul_demian1 { background-image: url(../../data/img/soul/demian1.gif); width: 200px; height: 200px; }
-#div-soul .soul_card .soul_img span.soul_demian2 { background-image: url(../../data/img/soul/demian2.gif); width: 200px; height: 200px; }
-#div-soul .soul_card .soul_img span.master2m { background-image: url(../../data/img/soul/2m.png); width: 155px; height: 100px; }
-#div-soul .soul_card .soul_img span.master2w { background-image: url(../../data/img/soul/2w.png); width: 155px; height: 100px; }
-#div-soul .soul_card .soul_img span.master3m { background-image: url(../../data/img/soul/3m.png); width: 180px; height: 160px; }
-#div-soul .soul_card .soul_img span.master3w { background-image: url(../../data/img/soul/3w.png); width: 180px; height: 160px; }
-#div-soul .soul_card .soul_img span.master4m { background-image: url(../../data/img/soul/4m.png); width: 165px; height: 160px; }
-#div-soul .soul_card .soul_img span.master4w { background-image: url(../../data/img/soul/4w.png); width: 165px; height: 160px; }
-#div-soul .soul_card .soul_img span.master5m { background-image: url(../../data/img/soul/5m.png); width: 130px; height: 170px; }
-#div-soul .soul_card .soul_img span.master5w { background-image: url(../../data/img/soul/5w.png); width: 130px; height: 170px; }
-#div-soul .soul_card .soul_img span.master6m { background-image: url(../../data/img/soul/6m.png); width: 210px; height: 170px; }
-#div-soul .soul_card .soul_img span.master6w { background-image: url(../../data/img/soul/6w.png); width: 210px; height: 170px; }
-#div-soul .soul_card .soul_img span.master7m { background-image: url(../../data/img/soul/7m.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master7w { background-image: url(../../data/img/soul/7w.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master8m-1 { background-image: url(../../data/img/soul/8m-1.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master8w-1 { background-image: url(../../data/img/soul/8w-1.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master8m-2 { background-image: url(../../data/img/soul/8m-2.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master8w-2 { background-image: url(../../data/img/soul/8w-2.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master8m-3 { background-image: url(../../data/img/soul/8m-3.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master8w-3 { background-image: url(../../data/img/soul/8w-3.png); width: 185px; height: 155px; }
-#div-soul .soul_card .soul_img span.master9m-1 { background-image: url(../../data/img/soul/9m-1.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master9w-1 { background-image: url(../../data/img/soul/9w-1.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master9m-2 { background-image: url(../../data/img/soul/9m-2.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master9w-2 { background-image: url(../../data/img/soul/9w-2.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master9m-3 { background-image: url(../../data/img/soul/9m-3.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master9w-3 { background-image: url(../../data/img/soul/9w-3.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master10m-1 { background-image: url(../../data/img/soul/10m-1.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master10w-1 { background-image: url(../../data/img/soul/10w-1.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master10m-2 { background-image: url(../../data/img/soul/10m-2.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master10w-2 { background-image: url(../../data/img/soul/10w-2.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master10m-3 { background-image: url(../../data/img/soul/10m-3.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master10w-3 { background-image: url(../../data/img/soul/10w-3.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master11m-1 { background-image: url(../../data/img/soul/11m-1.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master11w-1 { background-image: url(../../data/img/soul/11w-1.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master11m-2 { background-image: url(../../data/img/soul/11m-2.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master11w-2 { background-image: url(../../data/img/soul/11w-2.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master11m-3 { background-image: url(../../data/img/soul/11m-3.png); width: 185px; height: 185px; }
-#div-soul .soul_card .soul_img span.master11w-3 { background-image: url(../../data/img/soul/11w-3.png); width: 185px; height: 185px; }
-
-#div-soul .soul_card .soul_info { width: 55%; display: table-cell; }
-#div-soul .soul_card table#soul_info { width: 500px; }
-#div-soul .soul_card table#soul_info tr td:nth-child(2n-1){ width: 90px; font-weight: bold; }
-#div-soul .soul_card table#soul_info tr:first-child td{ padding-bottom: 15px; }
-#div-soul .soul_card table#soul_info td { font-size: 12.5px; padding-bottom: 5px;}
-#div-soul .soul_card table#soul_info td span.master_title { font-size: 20px; font-weight: bold; }
 
 
 
 
 
+/* master label */
+#div-soul { padding-top: 20px; }
 /* 소울작업 */
 #div-soul #soul-tab table { width: 100%; margin-bottom: 50px; text-align: left; }
 #div-soul #soul-tab table tbody tr { height: 40px; }
