@@ -4,10 +4,18 @@
 <meta charset="UTF-8">
 <title></title>
 <script src="./inc/js/jquery.min.js"></script>
-<script src="./data/js/master_label.js"></script>
 <script src="./data/js/weapon_option.js"></script>
 <script src="./data/js/soul.js"></script>
+<script src="./data/js/master_label.js"></script>
+<script src="./data/js/master_label_pet.js"></script>
+<script src="./data/js/cube.js"></script>
 <script src="./inc/js/preload.js"></script>
+<script src="./inc/js/weapon_option.js"></script>
+<script src="./inc/js/upgrade.js"></script>
+<script src="./inc/js/soul.js"></script>
+<script src="./inc/js/master_label.js"></script>
+<script src="./inc/js/master_label_pet.js"></script>
+<script src="./inc/js/cube.js"></script>
 <script src="./inc/js/index.js"></script>
 <link rel="stylesheet" href="./inc/css/font.css" />
 <link rel="stylesheet" href="./inc/css/index.css" />
@@ -26,8 +34,10 @@
                 <li id="add_option">무기 추옵표</li>
                 <li id="world_quest">월파 일정</li>
                 <li id="calc">주흔작 계산</li>
+                <li id="cube">잠재 옵션</li>
                 <li id="soul">소울 웨폰</li>
-                <li id="master_label">마스터라벨</li>
+                <li id="master_label">마스터 라벨</li>
+                <li id="master_label_pet">루나 쁘띠펫</li>
             </ul>
         </div>
     </div>
@@ -843,9 +853,27 @@
             </table>
         </div>
         
+        <div id="div-cube" class="dpn">
+            *잠재옵션 탭 제작 중(제작 기간 미정)*
+            <div class="title">* 재미로 해보는 큐브 돌려보기(무기/레전)</div>
+            <div id="cube1">
+                <img id="cube_play1" src="data/img/cube/blackcube.png" style="cursor: pointer;"/>
+                <div id="cube_opt1"></div>
+                <div id="cube_opt2"></div>
+                <div id="cube_opt3"></div>
+            </div>
+            <!-- <div class="title">* 재미로 해보는 큐브 돌려보기(등급업)</div>
+            <div id="cube1">
+                <button id="cube_play2">돌려!</button>
+                <div id="cube_opt1"></div>
+                <div id="cube_opt2"></div>
+                <div id="cube_opt3"></div>
+            </div> -->
+        </div>
+
+
 
         <div id="div-soul" class="dpn">
-
             <div id="soul-tab">
                 <table>
                     <tbody>
@@ -869,12 +897,7 @@
                 <div id="soul-none">소울 이름을 클릭해주세요.</div>
                 <div id="soul-sel" class="dpn"></div>
             </div>
-
-
-
-            
         </div>
-
 
         <div id="div-master_label" class="dpn">
             <div id="master1" class="master_card"></div>
@@ -888,6 +911,11 @@
             <div id="master9" class="master_card"></div>
             <div id="master10" class="master_card"></div>
             <div id="master11" class="master_card"></div>
+        </div>
+
+        <div id="div-master_label_pet" class="dpn">
+            <div id="master_pet1" class="master_pet_card"></div>
+            <div id="master_pet2" class="master_pet_card"></div>            
         </div>
     </div>
 
