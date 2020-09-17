@@ -114,7 +114,9 @@ body { width: 1100px; margin: auto; }
 #div-master_label_pet .master_pet_card .master_pet_img span.master_pet2-1 { background-image: url(../../data/img/master_label_pet/p2-1.gif); background-position: center center; }
 #div-master_label_pet .master_pet_card .master_pet_img span.master_pet2-2 { background-image: url(../../data/img/master_label_pet/p2-2.gif); background-position: center center; }
 #div-master_label_pet .master_pet_card .master_pet_img span.master_pet2-3 { background-image: url(../../data/img/master_label_pet/p2-3.gif); background-position: center center; }
-
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet3-1 { background-image: url(../../data/img/master_label_pet/p3-1.gif); background-position: center center; }
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet3-2 { background-image: url(../../data/img/master_label_pet/p3-2.gif); background-position: center center; }
+#div-master_label_pet .master_pet_card .master_pet_img span.master_pet3-3 { background-image: url(../../data/img/master_label_pet/p3-3.gif); background-position: center center; }
 
 #div-master_label_pet .master_pet_card .master_pet_info { width: 55%; display: table-cell; }
 #div-master_label_pet .master_pet_card table#master_pet_info { width: 300px; }
