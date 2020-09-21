@@ -139,6 +139,25 @@ body { width: 1100px; margin: auto; }
 #div-add_option table tbody tr td.lv { border-bottom: 2px solid #333333;}
 #div-add_option table tbody tr:last-child td { border-bottom: 0; }
 
+/* weekly_quest */
+#div-weekly_quest { padding-top: 20px; }
+#div-weekly_quest ul { display: table; padding: 0; }
+#div-weekly_quest ul li { display: table-cell; list-style: none; padding: 5px; }
+#div-weekly_quest ul li:first-child { padding-left: 0; }
+#div-weekly_quest ul li:hover { color: #a131e4; font-weight: bold; cursor: pointer; }
+#div-weekly_quest ul li.on { color: #a131e4; font-weight: bold; }
+
+#div-weekly_quest table { width: 1100px; border: 1px solid #dfdfdf; margin: auto; }
+#div-weekly_quest table thead tr { background-color: #333333; }
+#div-weekly_quest table thead tr th { padding: 3px; color: #ffffff; }
+#div-weekly_quest table tbody tr { text-align: center; }
+#div-weekly_quest table tbody tr td { padding: 5px; }
+#div-weekly_quest table tbody tr td { border-bottom: 1px solid #dedede;}
+#div-weekly_quest table tbody tr td.chu1 { font-weight: bold;}
+#div-weekly_quest table tbody tr.lv_last td { border-bottom: 2px solid #333333;}
+#div-weekly_quest table tbody tr td.lv { border-bottom: 2px solid #333333;}
+#div-weekly_quest table tbody tr:last-child td { border-bottom: 0; }
+
 /* calc */
 #div-calc { padding-top: 20px; }
 #div-calc .title { font-size: 17px; font-weight: bold; margin-bottom: 5px;}
