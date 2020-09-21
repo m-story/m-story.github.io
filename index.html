@@ -5,12 +5,14 @@
 <title></title>
 <script src="./inc/js/jquery.min.js"></script>
 <script src="./data/js/weapon_option.js"></script>
+<script src="./data/js/weekly_quest.js"></script>
 <script src="./data/js/soul.js"></script>
 <script src="./data/js/master_label.js"></script>
 <script src="./data/js/master_label_pet.js"></script>
 <script src="./data/js/cube.js"></script>
 <script src="./inc/js/preload.js"></script>
 <script src="./inc/js/weapon_option.js"></script>
+<script src="./inc/js/weekly_quest.js"></script>
 <script src="./inc/js/upgrade.js"></script>
 <script src="./inc/js/soul.js"></script>
 <script src="./inc/js/master_label.js"></script>
@@ -30,8 +32,9 @@
         <div class="tab">
             <ul>                
                 <li id="link_union" class="on">링크/유니온</li>
-                <li id="ability">어빌리티</li>          
+                <li id="ability">어빌리티</li>                
                 <li id="add_option">무기 추옵표</li>
+                <li id="weekly_quest">주간 퀘스트</li>
                 <li id="world_quest">월파 일정</li>
                 <li id="calc">주흔작 계산</li>
                 <li id="cube">잠재 옵션</li>
@@ -653,6 +656,31 @@
                         <th width="">3추</th>
                         <th width="">4추</th>
                         <th width="">5추</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="div-weekly_quest" class="dpn">
+            <div>
+                <ul>
+                    <li class="on" data-seq="1">헤이븐</li>
+                    <li data-seq="2">타락한 세계수</li>
+                    <li data-seq="3">크리티아스</li>
+                </ul>
+            </div>
+            <div class="title">* 난이도 ★x4 이상은 피하시는 걸 추천합니다. (난이도는 만덕뀨의 개인적인 의견입니다.)</div>            
+            <div>* 크리티아스 :: 얼어붙은 퀘스트가 타오르는 퀘스트보다 좋습니다.</div>
+            <div>* 크리티아스 :: 퀘스트 수락 시 5번줄에 나오는 브룬델 퀘스트는 안하셔도 무방합니다.(주간보스 초기화와 관련없음)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="150px">위치</th>
+                        <th width="260px">퀘스트명</th>
+                        <th width="500px">내용</th>
+                        <th width="90px">타입</th>
+                        <th width="100px">난이도</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
