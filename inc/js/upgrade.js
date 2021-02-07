@@ -95,11 +95,11 @@ $(document).ready(function(){
             if(starforce >= 15){ star_power = 7; }
             if(starforce >= 16){ star_power = 17; }
             if(starforce >= 17){ star_power = 28; }
-            if(starforce >= 18){ star_power = 30; }
-            if(starforce >= 19){ star_power = 43; }
-            if(starforce >= 20){ star_power = 57; }
-            if(starforce >= 21){ star_power = 72; }
-            if(starforce >= 22){ star_power = 89; }
+            if(starforce >= 18){ star_power = 40; }
+            if(starforce >= 19){ star_power = 53; }
+            if(starforce >= 20){ star_power = 67; }
+            if(starforce >= 21){ star_power = 82; }
+            if(starforce >= 22){ star_power = 99; }
         } else if(lv == '200'){
 
         }
